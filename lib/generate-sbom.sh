@@ -27,7 +27,7 @@ find . -name "pom.xml" | while read pom_file; do
 
     # 3. Copy the generated SBOM to our central reports directory
     if [ -f "target/bom.json" ]; then
-        cp target/bom.json "../sbom-reports/${project_name}-bom.json"
+        cp target/bom.json "../../sbom-reports/${project_name}-bom.json"
         echo "✅ Successfully generated SBOM for $project_name"
     else
         echo "❌ Failed to generate SBOM for $project_name"
