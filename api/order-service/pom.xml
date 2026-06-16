@@ -1,0 +1,84 @@
+<project>
+
+<modelVersion>4.0.0</modelVersion>
+
+
+<groupId>com.demo</groupId>
+<artifactId>user-service</artifactId>
+<version>1.0</version>
+
+
+<parent>
+
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.3.0</version>
+
+</parent>
+
+
+<properties>
+
+    <java.version>17</java.version>
+
+</properties>
+
+
+<dependencies>
+
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+
+</dependencies>
+
+
+
+<build>
+
+<plugins>
+
+
+<!-- Spring Boot -->
+<plugin>
+
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-maven-plugin</artifactId>
+
+</plugin>
+
+
+
+<!-- CycloneDX -->
+
+<plugin>
+
+<groupId>org.cyclonedx</groupId>
+<artifactId>cyclonedx-maven-plugin</artifactId>
+<version>2.8.0</version>
+
+
+<configuration>
+
+    <!-- put SBOM in target root -->
+    <outputDirectory>${project.build.directory}</outputDirectory>
+
+    <outputName>bom</outputName>
+
+    <outputFormat>json</outputFormat>
+
+</configuration>
+
+
+</plugin>
+
+
+</plugins>
+
+</build>
+
+
+</project>
